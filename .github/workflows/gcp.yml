@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: webrek
-      PROJECT_ID: dmetrix-345722
+      PROJECT_ID: metrix-345722
     steps:
       - name: Checkout
         uses: actions/checkout@v2
