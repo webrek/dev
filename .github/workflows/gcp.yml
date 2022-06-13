@@ -26,7 +26,7 @@ jobs:
       - name: Automatic Tagging of Releases
         id: increment-git-tag
         run: |
-          bash ./scripts/git_update.sh -v major
+          bash ./scripts/git_update.sh -v patch
       - name: Configure Docker Client
         run: |-
           gcloud auth configure-docker --quiet
@@ -47,3 +47,5 @@ jobs:
           docker tag $IMAGE_NAME:latest us-central1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$GIT_TAG
           docker push us-central1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:latest
           docker push us-central1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$GIT_TAG
+          
+          
